@@ -14,7 +14,7 @@ export function OverlayTileLayers({ tiles }: Props) {
     <>
       {tiles.map((tile) => {
         return (
-          <LayersControl.Overlay key={tile.name} name={tile.name}>
+          <LayersControl.Overlay checked key={tile.name} name={tile.name}>
             <TileLayer
               url={tile.url}
               opacity={tile.opacity || 0.75}

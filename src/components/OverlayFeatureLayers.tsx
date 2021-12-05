@@ -51,7 +51,7 @@ export function OverlayFeatureLayers({ featureCollections }: Props) {
           });
 
           return (
-            <LayersControl.Overlay key={name} name={name}>
+            <LayersControl.Overlay checked key={name} name={name}>
               <GeoJSON
                 data={featureCollection}
                 pointToLayer={(pointFeature, latlng) => {
