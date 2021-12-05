@@ -1,6 +1,11 @@
-# 市区町村ハザードマップテンプレート
+# 越前市ハザードマップ
 
-市区町村の Web ハザードマップを作成するためのテンプレート。
+- [越前市ハザードマップ](https://code4fukui.github.io/echizencity-hazardmap/)
+- 越前市オープンデータから、広域避難所、AED、医療機関を使用
+
+## 市区町村ハザードマップテンプレート
+
+市区町村の Web ハザードマップを作成するためのテンプレート「[市区町村ハザードマップテンプレート](https://github.com/sankichi92/shikuchoson-hazardmap-template)」を使用しています
 
 [Tokyo OSS Party!!](https://tokyo-oss-party.com/) 2021 の成果物です。\
 発表資料は https://speakerdeck.com/sankichi92/shikuchoson-hazardmap-template
