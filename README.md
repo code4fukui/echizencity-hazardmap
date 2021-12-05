@@ -1,7 +1,7 @@
 # 越前市ハザードマップ
 
 - [越前市ハザードマップ](https://code4fukui.github.io/echizencity-hazardmap/)
-- 越前市オープンデータから、広域避難所、AED、医療機関を使用
+- [越前市オープンデータ](https://www.city.echizen.lg.jp/office/010/021/open-data-echizen.html)から、広域避難所、AED、医療機関を使用
 
 ## 市区町村ハザードマップテンプレート
 
