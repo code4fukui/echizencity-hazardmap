@@ -1,9 +1,9 @@
 {
   // 都道府県
-  "prefecture": "東京都",
+  "prefecture": "福井県",
   
   // 市区町村
-  "city": "八王子市",
+  "city": "越前市",
   
   // ハザードマップポータルサイトで提供されているデータ。
   // 不要な要素（"{}"で囲まれる単位）を削除してください。
@@ -34,6 +34,7 @@
       "url": "https://disaportaldata.gsi.go.jp/raster/01_flood_l2_kaokutoukai_kagan_data/{z}/{x}/{y}.png",
       "attribution": "<a href=\"https://disaportal.gsi.go.jp/hazardmap/copyright/opendata.html\">ハザードマップポータルサイト</a>"
     },
+    /*
     {
       "name": "高潮浸水想定区域",
       "url": "https://disaportaldata.gsi.go.jp/raster/03_hightide_l2_shinsuishin_data/{z}/{x}/{y}.png",
@@ -44,6 +45,7 @@
       "url": "https://disaportaldata.gsi.go.jp/raster/04_tsunami_newlegend_data/{z}/{x}/{y}.png",
       "attribution": "<a href=\"https://disaportal.gsi.go.jp/hazardmap/copyright/opendata.html\">ハザードマップポータルサイト</a>"
     },
+    */
     {
       "name": "土砂災害警戒区域（土石流）",
       "url": "https://disaportaldata.gsi.go.jp/raster/05_dosekiryukeikaikuiki/{z}/{x}/{y}.png",
