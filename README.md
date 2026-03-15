@@ -1,7 +1,8 @@
 # echizencity-hazardmap
 
-- [echizencity-hazardmap](https://code4fukui.github.io/echizencity-hazardmap/)
-- Uses data from [Echizen City Open Data](https://www.city.echizen.lg.jp/office/010/021/open-data-echizen.html), including evacuation centers, AEDs, and medical institutions.
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
+
+This project uses data from [Echizen City Open Data](https://www.city.echizen.lg.jp/office/010/021/open-data-echizen.html), including evacuation centers, AEDs, and medical institutions.
 
 ## Municipal Hazard Map Template
 
