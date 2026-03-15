@@ -1,117 +1,114 @@
-# 越前市ハザードマップ
+# echizencity-hazardmap
 
-- [越前市ハザードマップ](https://code4fukui.github.io/echizencity-hazardmap/)
-- [越前市オープンデータ](https://www.city.echizen.lg.jp/office/010/021/open-data-echizen.html)から、広域避難所、AED、医療機関を使用
+- [echizencity-hazardmap](https://code4fukui.github.io/echizencity-hazardmap/)
+- Uses data from [Echizen City Open Data](https://www.city.echizen.lg.jp/office/010/021/open-data-echizen.html), including evacuation centers, AEDs, and medical institutions.
 
-## 市区町村ハザードマップテンプレート
+## Municipal Hazard Map Template
 
-市区町村の Web ハザードマップを作成するためのテンプレート「[市区町村ハザードマップテンプレート](https://github.com/sankichi92/shikuchoson-hazardmap-template)」を使用しています
+This project uses the "Municipal Hazard Map Template" ([shikuchoson-hazardmap-template](https://github.com/sankichi92/shikuchoson-hazardmap-template)) to create web-based municipal hazard maps.
 
-[Tokyo OSS Party!!](https://tokyo-oss-party.com/) 2021 の成果物です。\
-発表資料は https://speakerdeck.com/sankichi92/shikuchoson-hazardmap-template
+This is the result of [Tokyo OSS Party!!](https://tokyo-oss-party.com/) 2021. \
+The presentation slides are available at https://speakerdeck.com/sankichi92/shikuchoson-hazardmap-template
 
-## 利用例
+## Example Usage
 
-- [八王子市](https://sankichi.net/hachioji-hazardmap/) ([sankichi92/hachioji-hazardmap](https://github.com/sankichi92/hachioji-hazardmap))
+- [Hachioji City](https://sankichi.net/hachioji-hazardmap/) ([sankichi92/hachioji-hazardmap](https://github.com/sankichi92/hachioji-hazardmap))
 
-## 背景と課題
+## Background and Challenges
 
-日本のハザードマップは、国土交通省の管理する[ハザードマップポータルサイト](https://disaportal.gsi.go.jp/)にまとめられており、そこでは以下の2つのサービスが提供されています。
+Hazard maps in Japan are compiled on the [Hazard Map Portal Site](https://disaportal.gsi.go.jp/) managed by the Ministry of Land, Infrastructure, Transport and Tourism, which provides the following two services:
 
-- 重ねるハザードマップ: 災害リスク情報や防災に役立つ情報を、全国どこでも重ねて閲覧できるWeb地図サイト
-- わがまちハザードマップ: 市町村が作成したハザードマップを見つけやすくまとめたリンク集
+- Overlaying Hazard Maps: A web map service that allows you to overlay disaster risk information and other useful disaster prevention information nationwide.
+- Finding Municipal Hazard Maps: A link collection of hazard maps created by municipalities.
 
-「重ねるハザードマップ」は Web 地図として多機能で非常によく作りこまれていますが、その[使い方](https://disaportal.gsi.go.jp/hazardmap/pamphlet/pamphlet.html)でも
+The "Overlaying Hazard Maps" is a well-designed and highly functional web map, but as stated in [the usage guide](https://disaportal.gsi.go.jp/hazardmap/pamphlet/pamphlet.html):
 
-> 詳細を確認する場合は市町村が作成したハザードマップをご覧ください。
+> For detailed information, please refer to the hazard maps created by the municipalities.
 
-とあるとおり、あくまで国の作成した地図であり、市区町村ごとの詳細は確認できません。
+In other words, it is a national map, and the details of each municipality cannot be confirmed.
 
-ハザードマップに求められるのは、多くの場合、国全体の広く浅い情報ではなく、自身の住む場所ピンポイントの狭く深い情報です。
-そうした情報を確認するには、「わがまちハザードマップ」から市区町村のハザードマップを確認する必要があります。
+What is often required of hazard maps is not broad, shallow information about the country as a whole, but narrow, deep information about the specific location where one lives. To confirm such information, it is necessary to check the hazard maps of the municipalities through the "Finding Municipal Hazard Maps".
 
-しかし、市区町村の作成するハザードマップの多くが紙での配布を前提としており、重ねるハザードマップとちがって Web に最適化されていません。
-そしておそらく、独自の Web ハザードマップを開発・運用できるほど、予算やリソースに余裕のある市区町村は少ないでしょう。
+However, many of the hazard maps created by municipalities are premised on paper distribution, and are not optimized for the web, unlike the "Overlaying Hazard Maps". And probably, there are not many municipalities that have the budget and resources to develop and operate their own web-based hazard maps.
 
-この課題に対し、本プロジェクトは、市区町村の単位で Web ハザードマップを容易に作成・カスタマイズできるテンプレートを提供します。
+To address this issue, this project provides a template that allows municipalities to easily create and customize web-based hazard maps.
 
-## 使い方
+## Usage
 
-動画で見る: https://youtu.be/oc1CfaVSlno
+Watch the video: https://youtu.be/oc1CfaVSlno
 
-### ハザードマップの作成・公開
+### Creating and Publishing Hazard Maps
 
-#### 1. テンプレートを使用して GitHub リポジトリを作成する
+#### 1. Create a GitHub repository using the template
 
-1. 上部（あるいはこちら）の「[Use this template](https://github.com/sankichi92/shikuchoson-hazardmap-template/generate)」ボタンを押す
-2. Repository name を入力（例: `hachioji-hazardmap`）し、「Create repository from template」ボタンを押す
-   - Repository name が次の手順で公開する Web ページの URL の一部になります
+1. Click the "Use this template" button at the top (or here)
+2. Enter a Repository name (e.g. `hachioji-hazardmap`) and click "Create repository from template"
+   - The Repository name will be part of the URL of the web page you publish in the next step
 
-詳細: https://docs.github.com/ja/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template
+Details: https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template
 
-#### 2. `hazardmap-config.jsonc` を対象の市区町村向けに更新する
+#### 2. Update the `hazardmap-config.jsonc` file for the target municipality
 
-1. 作成したリポジトリの [`hazardmap-config.jsonc`](./hazardmap-config.jsonc) をクリックして開く
-2. ファイル右上の鉛筆✏️ボタンをクリックして編集画面を開く
-3. `prefecture` と `city` の値をハザードマップを作成する都道府県・市区町村に変更して「Commit changes」ボタンを押す
-   - 合わせて、不要な `tiles` の要素（`{}` で囲まれる単位）も消してください。たとえば、内陸であれば「高潮浸水想定区域」は不要でしょう
+1. Click on the [`hazardmap-config.jsonc`](./hazardmap-config.jsonc) file in the created repository to open it
+2. Click the pencil ✏️ button in the top right to enter the edit mode
+3. Change the values of `prefecture` and `city` to the prefecture and municipality for which you are creating the hazard map, and click the "Commit changes" button
+   - Also, delete any unnecessary `tiles` elements (`{}` enclosed units). For example, if it's an inland area, "High tide inundation area" may not be necessary.
 
-詳細: https://docs.github.com/ja/repositories/working-with-files/managing-files/editing-files#editing-files-in-your-repository
+Details: https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files#editing-files-in-your-repository
 
-#### 3. 作成したリポジトリの設定で GitHub Pages を有効化して Web ページを公開する
+#### 3. Enable GitHub Pages in the settings of the created repository to publish the web page
 
-1. 上部タブ「Settings」→サイドバー「Pages」から GitHub Pages の設定画面へ移動する
-2. Source に「`gh-pages`」を選択して「Save」ボタンを押す
-3. しばらくすると、GitHub Pages の設定画面に URL が表示され、ハザードマップがその URL で公開される
+1. Go to the Settings tab > Pages sidebar to access the GitHub Pages settings
+2. Select "`gh-pages`" as the Source and click the "Save" button
+3. After a while, a URL will be displayed on the GitHub Pages settings page, and the hazard map will be published at that URL.
 
-詳細: https://docs.github.com/ja/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+Details: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
 
-### ハザードマップのカスタマイズ
+### Customizing the Hazard Map
 
-#### CSV ファイルをアップロードしてカスタムレイヤを追加する
+#### Adding custom layers by uploading CSV files
 
-1. 作成したリポジトリの [`csv`](./csv) をクリックして内容を表示する
-2. 「Add files」→「Upload files」から CSV ファイルをアップロード、「Commit changes」ボタンを押す
-3. [`01-サンプル.csv`](./csv/01-サンプル.csv) を表示し、右上のゴミ箱🗑ボタンからファイルを削除する
+1. Click on the [`csv`](./csv) folder in the created repository to view its contents
+2. Click "Add files" > "Upload files" to upload a CSV file, then click the "Commit changes" button
+3. View [`01-サンプル.csv`](./csv/01-サンプル.csv) and click the trash can 🗑 button in the top right to delete the file
 
-詳細: https://docs.github.com/ja/repositories/working-with-files/managing-files/adding-a-file-to-a-repository
+Details: https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository
 
-##### CSV のフォーマットについて
+##### About the CSV format
 
-CSV ファイルは必ず `name`（名前）、`lat`（緯度）、`lon`（経度）のカラム（列）を持つ必要があります。
-さらに、これらのカラム以外も追加でき、地図上のアイコンをクリックしたときに合わせて表示されます。
-また、ファイル名先頭の `01-` は地図上での表示順を決めるために使われ、数字自体は地図上に表示されません。
+The CSV file must have the `name`, `lat` (latitude), and `lon` (longitude) columns.
+Additionally, other columns can be added, and they will be displayed when the map icon is clicked.
+The file name prefix `01-` is used to determine the display order on the map, but the number itself is not displayed on the map.
 
-[`01-サンプル.csv`](./csv/01-サンプル.csv) を参考にしてください。
+Please refer to [`01-サンプル.csv`](./csv/01-サンプル.csv) as an example.
 
-#### 画像をアップロードして地図の左下に表示する
+#### Uploading images to display in the bottom left of the map
 
-CSV 同様、[`images`](./images) 以下に画像をアップロードすれば、地図の左下に表示されるようになります。
+Similar to CSV, you can upload images to the [`images`](./images) directory, and they will be displayed in the bottom left of the map.
 
-## 開発について
+## Development
 
-このプロジェクトは [Create React App](https://github.com/facebook/create-react-app) で作成されています。
+This project was created using [Create React App](https://github.com/facebook/create-react-app).
 
-以下のコマンドが使用可能です。
+The following commands are available:
 
 ### `npm start`
 
-開発モードでアプリを起動します。\
-ブラウザで見るには [http://localhost:3000](http://localhost:3000) を開いてください。
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-コードを変更するたび、ページも更新されます。\
-また、コンソールで lint エラーも確認できます。
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
 ### `npm run build`
 
-本番向けのアプリをビルドし、`build` フォルダに配置します。
+Builds the app for production to the `build` folder.
 
 ### `npm run prebuild`
 
-`hazardmap-config.jsonc` や `csv`, `images` ディレクトリの内容をもとに、`src/generated` 以下のファイルを更新します。\
-当該ファイル、ディレクトリの変更を反映するには、`npm start` の前に一度このコマンドを実行してください。
+Updates the files under `src/generated` based on the contents of `hazardmap-config.jsonc`, `csv`, and `images` directories.\
+You need to run this command before `npm start` to reflect changes in the aforementioned files and directories.
 
 ### `npm run format`
 
-`src` 以下のコードを整形します。\
-フォーマッタには [Prettier](https://prettier.io/) を使用しています。
+Formats the code under `src` using [Prettier](https://prettier.io/).
