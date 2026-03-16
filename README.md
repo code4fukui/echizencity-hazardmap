@@ -8,8 +8,7 @@ This project uses data from [Echizen City Open Data](https://www.city.echizen.lg
 
 This project uses the "Municipal Hazard Map Template" ([shikuchoson-hazardmap-template](https://github.com/sankichi92/shikuchoson-hazardmap-template)) to create web-based municipal hazard maps.
 
-This is the result of [Tokyo OSS Party!!](https://tokyo-oss-party.com/) 2021. \
-The presentation slides are available at https://speakerdeck.com/sankichi92/shikuchoson-hazardmap-template
+This is the result of [Tokyo OSS Party!!](https://tokyo-oss-party.com/) 2021. The presentation slides are available at https://speakerdeck.com/sankichi92/shikuchoson-hazardmap-template
 
 ## Example Usage
 
@@ -113,3 +112,5 @@ You need to run this command before `npm start` to reflect changes in the aforem
 ### `npm run format`
 
 Formats the code under `src` using [Prettier](https://prettier.io/).
+
+MIT License — see [LICENSE](LICENSE).
