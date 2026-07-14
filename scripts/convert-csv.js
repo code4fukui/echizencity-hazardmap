@@ -10,7 +10,7 @@ const files = fs.readdirSync(path.join(__dirname, "../csv"));
 files.sort().forEach((file) => {
   const name = path.parse(file).name.match(fileNameRegexp).groups.name
   const csv = fs.readFileSync(path.join(__dirname, `../csv/${file}`));
-  csv2geojson.csv2geojson(csv.toString(), (err, data) => {
+  csv2geojson.csv2geojson(csv.toString().replace(/^\uFEFF/, ""), (err, data) => {
     if (err) {
       console.error(err);
       process.exit(1);
