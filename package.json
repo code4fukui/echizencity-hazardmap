@@ -34,8 +34,9 @@
   "scripts": {
     "prestart": "node scripts/convert-csv.js",
     "start": "react-scripts start",
-    "prebuild": "node scripts/convert-config.js && node scripts/fetch-city-osm.js && node scripts/convert-csv.js && node scripts/copy-images",
+    "prebuild": "node scripts/convert-config.js && node scripts/convert-csv.js && node scripts/copy-images",
     "build": "react-scripts build",
+    "refresh-city-osm": "node scripts/convert-config.js && node scripts/fetch-city-osm.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier src/*.{ts,tsx,css} --write"

@@ -22,9 +22,16 @@ out geom;`;
 axiosRetry(axios, { retry: 5, retryDelay: axiosRetry.exponentialDelay });
 
 (async () => {
-  const response = await axios.get(`https://overpass-api.de/api/interpreter`, {
-    params: { data: query },
-  });
+  const response = await axios.post(
+    "https://overpass-api.de/api/interpreter",
+    new URLSearchParams({ data: query }),
+    {
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "User-Agent": "echizencity-hazardmap/1.0",
+      },
+    }
+  );
 
   if (response.data.elements.length === 0) {
     console.error(
